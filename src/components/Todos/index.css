@@ -1,0 +1,38 @@
+body {
+	background-image: url(Images/background.jpg);
+	background-position-x: 100%;
+	background-position-y: 10%;
+}
+.title {
+	font-size: 35px;
+	padding: 20px;
+	color: #2b547e;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.search-btn {
+	display: flex;
+	justify-content: center;
+}
+.inputText {
+	outline: none;
+	width: 350px;
+	height: 35px;
+	border: 2px solid #98afc7;
+	border-radius: 1rem 0 0 1rem;
+	padding: 0.3rem 1rem;
+	background-color: #e2e2e2;
+	font-size: 1rem;
+	box-shadow: 5px 5px 8px 2px #98afc7;
+}
+.search-btn button {
+	width: 80px;
+	background-color: #e2e2e2;
+	box-shadow: 5px 5px 8px 2px #98afc7;
+	padding: 0.2rem 0.5rem;
+	outline: none;
+	border: 2px solid #98afc7;
+	border-radius: 0 5rem 5rem 0;
+	color: #151b54;
+	font-style: italic;
+	font-weight: bold;
+}
