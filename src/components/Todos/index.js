@@ -14,25 +14,41 @@ function Todos() {
 		setList([...list, newTodo]);
 		setInput("");
 	};
+
+	function handleSubmit(e) {
+		e.preventDefault();
+	}
+
+	const deleteTodo = (id) => {
+		const newList = list.filter((todo) => todo.id !== id);
+
+		setList(newList);
+		// filter methodu diziyi tek tek gezer ve true olan değerleri yeni listeye atar
+	};
+
 	return (
 		<div>
 			<h1 className="title">Yapılacaklar Listesi</h1>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<div className="search-btn">
 					<input type="text" value={input} onChange={(e) => setInput(e.target.value)} placeholder="İdeal düzenini inşa et..." className="inputText" />
-					<button onClick={() => addTodo(input)}>
+					<button className="add-btn" onClick={() => addTodo(input)}>
 						<FaPencilAlt />
 					</button>
-					<ul>
-						{list.map((todo) => (
-							<li key={todo.id}>
-								{todo.todo}
-								<button>&times;</button>
-							</li>
-						))}
-					</ul>
 				</div>
 			</form>
+			<div className="list">
+				<ul className="todo-list">
+					{list.map((todo) => (
+						<li key={todo.id}>
+							{todo.todo}
+							<button className="delete-btn" onClick={() => deleteTodo(todo.id)}>
+								&times;
+							</button>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 }
